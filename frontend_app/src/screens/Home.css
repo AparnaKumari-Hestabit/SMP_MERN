@@ -1,0 +1,129 @@
+/* Home Screen Styles */
+.home-screen {
+  position: relative;
+  min-height: 100vh;
+  background: #f3f4f6;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+/* App Bar/Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #007bff;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  height: 60px; /* Ensure header has a fixed height */
+  box-sizing: border-box;
+}
+
+/* Container for title and logout icon */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.header-title {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+/* Add padding to home-screen to avoid content going under header */
+.home-screen {
+  padding-top: 80px; /* Push down content so it doesn't overlap with fixed header */
+}
+.logout-icon {
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  padding: 10px; /* Add padding instead of margin */
+}
+
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.post-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transform: rotate(-2deg);
+  word-wrap: break-word;
+}
+
+.post-card:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.post-card:hover {
+  transform: scale(1.05) rotate(0deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.icon-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.edit-icon:hover {
+  color: #0056b3;
+}
+
+.delete-icon:hover {
+  color: #d32f2f;
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle, #ff416c, #ff4b2b);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.floating-button:hover {
+  background: radial-gradient(circle, #ff1e56, #ff2a00);
+}
+
+@media (max-width: 768px) {
+  .posts-container {
+    grid-template-columns: 1fr;
+  }
+}

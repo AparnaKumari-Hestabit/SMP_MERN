@@ -1,0 +1,91 @@
+/* createPostStyles.css */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #bbb5ec, #fad0c4);
+  padding: 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  padding: 35px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.input,
+.textarea {
+  width: 90%;
+  padding: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  text-align: left;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #ff7eb3;
+  outline: none;
+  box-shadow: 0px 0px 12px rgba(255, 126, 179, 0.5);
+}
+
+.textarea {
+  min-height: 180px;
+}
+
+.button {
+  width: 90%;
+  padding: 16px;
+  background: linear-gradient(90deg, #ff758c, #ff7eb3);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.button:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.button:hover:not(:disabled) {
+  transform: scale(1.08);
+  background: linear-gradient(90deg, #ff5176, #ff6484);
+  box-shadow: 0px 5px 15px rgba(255, 81, 118, 0.4);
+}
